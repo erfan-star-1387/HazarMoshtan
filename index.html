@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +8,43 @@
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-    <div>
-        <video src="./videos/startup_video.mp4" id="startup_video"></video>
-        <!-- <h1>این بازی در دست احداث است</h1> -->
+    <audio src="./sounds/menumusic.mp3" id="menumusic"></audio>
+    <audio src="./sounds/Punch.mp3" id="Punchsound"></audio>
+    <div id="game">
+        <!-- jg -->
+
+        <video src="./videos/come_to_menu.mp4" id="startup_video" class="hide"></video>
+        <div class="menu">
+            <video src="./videos/menu.mp4" id="game_menu"></video>
+            <div id="select_settings"></div>
+            <div id="select_fight"></div>
+        </div>
+        <div class="game_settings">
+            <div id="sound_controll"></div>
+            <div class="back"></div>
+            <video src="./videos/menusetting.webm" id="vid_settings"></video>
+        </div>
+        <div class="chapters">
+            <video src="./videos/selectpart.mp4" id="vid_chapter"></video>
+            <div id="select_chapter"></div>
+            <div class="back"></div>
+        </div>
+        <div class="levels">
+            <video src="./videos/select_part2.mp4" id="vid_levels"></video>
+            <div id="select_level"></div>
+            <div class="back"></div>
+        </div>
+        <div class="game_sance">
+            <!-- <img src="./image/background.png" alt="background" class="bg_img"> -->
+
+            <div id="gameplay">
+                <div class="enemy">
+                    <div class="arrow"> <img src="./image/right.png" alt="right"> </div>
+                    <img src="./image/gif/walking_enemy1.gif">
+                </div>
+                
+            </div>
+        </div>
     </div>
 </body>
 <script src="./js/main.js"></script>

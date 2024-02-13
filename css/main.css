@@ -1,13 +1,254 @@
 body{
-    font-family: tahoma;
     margin: 0;
+    background: #222;
 }
-div{
-    background-color: #333;
-    display: flex;
+#game{
+    margin: 15px auto;
+    width: 1280px;
+    height: 768px;
+    background: #444;
+    position: relative;
+    /* overflow: hidden; */
+}
+#game > .menu{
+    display: none;
+    height: 100%;
+    position: relative;
+}
+#game > .menu > #select_settings{
+    background: white;
+    width: 60px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 75px;
+    cursor: pointer;
+}
+#game > .menu > #select_fight{
+    background-color: white;
+    width: 250px;
+    height: 170px;
+    position: absolute;
+    left: 53%;
+    bottom: 0%;
+    cursor: pointer;
+}
+#game > .game_settings{
+    display: none;
+    width: 850px;
+    height: 500px;
+    left: 18%;
+    top: 0%;
+    position: absolute;
+}
+#game > .game_settings > #sound_controll{
+    width: 200px;
+    height: 78px;
+    background-color: white;
+    position: relative;
+    left: 20%;
+    top: 61%;
+    cursor: pointer;
+}
+#game > .game_settings > .back{
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    position: absolute;
+    top: 26%;
+    left: 17%;
+    cursor: pointer;
+}
+
+#game > .chapters{
+    display: none;
     width: 100%;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    color: white;
+    height: 100%;
+    position: relative;
+}
+#game > .chapters > #select_chapter{
+    width: 250px;
+    height: 350px;
+    background-color: white;
+    position: absolute;
+    left: 41%;
+    top: 25%;
+    cursor: pointer;
+}
+#game > .chapters > .back{
+    width: 70px;
+    height: 70px;
+    background-color: white;
+    position: absolute;
+    top: 6%;
+    left: 10%;
+    cursor: pointer;
+}
+
+#game > .levels{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+#game > .levels > #select_level{
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    position: absolute;
+    top: 35%;
+    left: 32%;
+    cursor: pointer;
+}
+#game > .levels > .back{
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    cursor: pointer;
+}
+/* game play */
+
+#game > .game_sance{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: url('../image/background.png') no-repeat;
+    background-size: 100% 100%;
+    overflow: hidden;
+}
+
+#game > .game_sance > #gameplay{
+    width: 100%;
+    height: 710px;
+    position: relative;
+    margin: 0 auto;
+    /* background-color: white; */
+}
+
+/* center right left enemy position*/
+
+#game > .game_sance > #gameplay > .enemy{
+    width: 100px;
+    height: 250px;
+    /* background: url('../image/gif/walking_enemy1.gif') no-repeat; */
+    /* background-size: 100px 250px; */
+    position: absolute;
+    top: 0%;
+    left: 45%;
+    animation: Walking 10s infinite;
+}
+
+#game > .game_sance > #gameplay > .enemy.right{
+    width: 100px;
+    height: 250px;
+    position: absolute;
+    top: 0%;
+    left: 60%;
+    animation: Walking 10s infinite;
+}
+
+#game > .game_sance > #gameplay > .enemy.left{
+    width: 100px;
+    height: 250px;
+    position: absolute;
+    top: 0%;
+    left: 33%;
+    animation: Walking 10s infinite;
+}
+#game > .game_sance > #gameplay > .enemy > img{
+    width: 100%;
+    height: 100%;
+}
+#game > .game_sance > #gameplay > .enemy > .arrow{
+    border: 1px solid red;
+    width: 110px;
+    height: 30px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+}
+video{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+.hide{
+    display: none;
+}
+@keyframes Walking{
+    0%{
+        transform: translateY(-60px) scale(.4);
+    }
+    12.5%{
+        transform: translateY(-0px) scale(.6);
+    }
+    25%{
+     transform: translateY(60px) scale(.8);
+    }
+    37.5%{
+        transform: translateY(120px) scale(1);
+    }
+    50%{
+        transform: translateY(180px) scale(1.2);
+    }
+    62.5%{
+        transform: translateY(240px) scale(1.4);
+    }
+    75%{
+        transform: translateY(300px) scale(1.6);
+    }
+    87.5%{
+        transform: translateY(360px) scale(1.8);
+    }
+    100%{
+        transform: translateY(420px) scale(2);
+    }
+}
+
+@keyframes RotateRight {
+    0%{
+         transform: rotate(0deg);
+    }
+
+    25%{
+         transform: rotate(90deg);        
+    }
+
+    50%{
+         transform: rotate(180deg); 
+    }
+
+    75%{
+        transform: rotate(270deg); 
+    }
+
+    100%{
+        transform: rotate(360deg); 
+    }
+
+}
+@keyframes RotateLeft {
+    0%{
+         transform: rotate(0deg);
+    }
+
+    25%{
+         transform: rotate(-90deg);        
+    }
+
+    50%{
+         transform: rotate(-180deg); 
+    }
+
+    75%{
+        transform: rotate(-270deg); 
+    }
+
+    100%{
+        transform: rotate(-360deg); 
+    }
+
 }
