@@ -100,5 +100,4 @@ for(i=0; i < myjson.length;i++){
         // addToDiv.appendChild(arrow_img);
         charecter.appendChild(enemy_img);
         gameplay.appendChild(charecter);
-        await timer(5000);
 }
