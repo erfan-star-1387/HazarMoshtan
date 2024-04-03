@@ -1,6 +1,7 @@
 body{
     margin: 0;
     background: #222;
+    overflow: hidden;
 }
 #game{
     margin: 15px auto;
@@ -11,12 +12,11 @@ body{
     /* overflow: hidden; */
 }
 #game > .menu{
-    display: none;
     height: 100%;
     position: relative;
 }
 #game > .menu > #select_settings{
-    background: white;
+    /* background: white; */
     width: 60px;
     height: 50px;
     position: absolute;
@@ -25,7 +25,7 @@ body{
     cursor: pointer;
 }
 #game > .menu > #select_fight{
-    background-color: white;
+    /* background-color: white; */
     width: 250px;
     height: 170px;
     position: absolute;
@@ -34,26 +34,27 @@ body{
     cursor: pointer;
 }
 #game > .game_settings{
-    display: none;
     width: 850px;
     height: 500px;
     left: 18%;
     top: 0%;
     position: absolute;
+    z-index: 20;
 }
 #game > .game_settings > #sound_controll{
     width: 200px;
     height: 78px;
-    background-color: white;
+    /* background-color: white; */
     position: relative;
     left: 20%;
     top: 61%;
     cursor: pointer;
+    z-index: 100;
 }
 #game > .game_settings > .back{
     width: 50px;
     height: 50px;
-    background-color: white;
+    /* background-color: white; */
     position: absolute;
     top: 26%;
     left: 17%;
@@ -61,7 +62,6 @@ body{
 }
 
 #game > .chapters{
-    display: none;
     width: 100%;
     height: 100%;
     position: relative;
@@ -69,7 +69,7 @@ body{
 #game > .chapters > #select_chapter{
     width: 250px;
     height: 350px;
-    background-color: white;
+    /* background-color: white; */
     position: absolute;
     left: 41%;
     top: 25%;
@@ -78,7 +78,7 @@ body{
 #game > .chapters > .back{
     width: 70px;
     height: 70px;
-    background-color: white;
+    /* background-color: white; */
     position: absolute;
     top: 6%;
     left: 10%;
@@ -94,7 +94,7 @@ body{
 #game > .levels > #select_level{
     width: 200px;
     height: 200px;
-    background-color: white;
+    /* background-color: white; */
     position: absolute;
     top: 35%;
     left: 32%;
@@ -103,7 +103,7 @@ body{
 #game > .levels > .back{
     width: 80px;
     height: 80px;
-    background-color: white;
+    /* background-color: white; */
     position: absolute;
     top: 5%;
     left: 10%;
@@ -138,7 +138,7 @@ body{
     position: absolute;
     top: 0%;
     left: 45%;
-    animation: Walking 10s infinite;
+    animation: Walking 7s infinite;
 }
 
 #game > .game_sance > #gameplay > .enemy.right{
@@ -147,7 +147,7 @@ body{
     position: absolute;
     top: 0%;
     left: 60%;
-    animation: Walking 10s infinite;
+    animation: Walking 7s infinite;
 }
 
 #game > .game_sance > #gameplay > .enemy.left{
@@ -156,12 +156,30 @@ body{
     position: absolute;
     top: 0%;
     left: 33%;
-    animation: Walking 10s infinite;
+    animation: Walking 7s infinite;
 }
+
+
+#game > .game_sance > #gameplay > .enemy.died{
+    animation: RotateLeft 1000ms forwards;
+}
+
 #game > .game_sance > #gameplay > .enemy > img{
     width: 100%;
     height: 100%;
 }
+
+/* selector enemy */
+#game > .game_sance > #gameplay > .enemy.fat{
+    background: url('../image/gif/walking_enemy2.gif') no-repeat ;
+    background-size: 100%;
+}
+
+#game > .game_sance > #gameplay > .enemy.tall{
+    background: url('../image/gif/walking_enemy1.gif') no-repeat ;
+    background-size: 100%;
+}
+
 #game > .game_sance > #gameplay > .enemy > .arrow{
     border: 1px solid red;
     width: 110px;
@@ -208,47 +226,25 @@ video{
     }
 }
 
-@keyframes RotateRight {
-    0%{
-         transform: rotate(0deg);
-    }
-
-    25%{
-         transform: rotate(90deg);        
-    }
-
-    50%{
-         transform: rotate(180deg); 
-    }
-
-    75%{
-        transform: rotate(270deg); 
-    }
-
-    100%{
-        transform: rotate(360deg); 
-    }
-
-}
 @keyframes RotateLeft {
     0%{
          transform: rotate(0deg);
     }
 
-    25%{
-         transform: rotate(-90deg);        
-    }
+    /* 25%{
+         transform: rotate(-25deg);        
+    } */
 
-    50%{
-         transform: rotate(-180deg); 
-    }
+    /* 50%{
+         transform: rotate(-50deg); 
+    } */
 
-    75%{
-        transform: rotate(-270deg); 
-    }
+    /* 70%{
+        transform: rotate(-70deg); 
+    } */
 
     100%{
-        transform: rotate(-360deg); 
+        transform: rotate(-90deg); 
     }
 
 }
