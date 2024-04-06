@@ -176,21 +176,21 @@ let menuMusicChk = true;
 
 startup_video.classList.remove("hide");
 startup_video.play();
-startup_video.addEventListener("click", () => {
+startup_video.onclick= () => {
   Punchsound.play();
   startup_video.pause();
   startup_video.classList.add("hide");
   startMenu();
-});
+}
 
 function startMenu() {
   const menu = document.querySelector(".menu");
   menu.classList.remove("hide");
   game_menu.play();
   if (menuMusicChk === true) menumusic.play();
-  select_settings.addEventListener("click", () => {
+  select_settings.onclick= () => {
     settings();
-  });
+  }
 
   select_fight.addEventListener("click", () => {
     menu.classList.add("hide");
@@ -201,12 +201,13 @@ function settings() {
   const gameSettings = document.querySelector(".game_settings");
   const gameSettingsClose = document.querySelector(".game_settings > .back");
   gameSettings.classList.remove("hide");
-  gameSettingsClose.addEventListener("click", () => {
+  vid_settings.play();
+
+  gameSettingsClose.onclick=() => {
     gameSettings.classList.add("hide");
     vid_settings.pause();
     vid_settings.currentTime = 0;
-  });
-  vid_settings.play();
+  };
   sound_controll.onclick=()=>{
     if (menuMusicChk === true) {
       menumusic.pause();
